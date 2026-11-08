@@ -1,0 +1,24 @@
+# AWS private keys - never upload these
+*.pem
+*.key
+
+# AWS credentials and sensitive files
+.env
+.env.*
+credentials
+aws-credentials*
+*.csv
+
+# Windows system files
+Thumbs.db
+desktop.ini
+
+# VS Code editor files
+.vscode/
+
+# Temporary and backup files
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo

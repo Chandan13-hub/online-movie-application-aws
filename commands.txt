@@ -1,0 +1,68 @@
+==========================================
+AWS ONLINE MOVIE APPLICATION - COMMANDS
+==========================================
+
+1. CONNECT TO LINUX EC2 INSTANCE
+ssh -i "movieappkey1.pem" ec2-user@ec2-13-127-252-198.ap-south-1.compute.amazonaws.com
+
+2. INSTALL AND START APACHE WEB SERVER
+sudo yum install -y httpd
+sudo systemctl start httpd
+sudo systemctl enable httpd
+sudo systemctl status httpd
+
+3. ALLOW WEBSITE FILES TO BE COPIED
+sudo chmod 0777 /var/www/html
+
+4. DOWNLOAD MOVIE WEBSITE FROM S3
+aws s3 cp s3://movie-chandan-watch-app-1307/Movie.zip ./app.zip
+
+5. INSTALL UNZIP TOOL
+sudo yum install -y unzip
+
+6. EXTRACT WEBSITE FILES INTO APACHE DIRECTORY
+unzip app.zip -d /var/www/html
+
+7. VERIFY WEBSITE FILES
+ls -l /var/www/html
+
+8. TEST APACHE LOCALLY
+curl -I http://localhost
+
+9. TEST WEBSITE USING EC2 PUBLIC IP
+http://13.127.252.198
+
+10. TEST WEBSITE USING APPLICATION LOAD BALANCER DNS
+movie-app-alb-1296486406.ap-south-1.elb.amazonaws.com
+
+11. TEST PRIVATE HOSTED ZONE DNS FROM LINUX EC2
+curl -I http://www.movie.internal.movie.internal
+
+12. INSTALL STRESS TESTING TOOL - AMAZON LINUX 2
+sudo yum install -y amazon-efs-utils
+sudo yum install -y stress
+
+13. RUN CPU STRESS TEST
+stress -c 4
+
+14. STOP STRESS TEST
+Press Ctrl + C
+
+15. STRESS COMMANDS FOR AMAZON LINUX 2023
+sudo dnf install -y stress
+stress -c 4
+
+16. TEST PRIVATE DNS FROM WINDOWS VM
+nslookup www.movie.internal.movie.internal
+http://www.movie.internal.movie.internal
+
+17. OPTIONAL: TEST PRIVATE DNS USING POWERSHELL
+Invoke-WebRequest http://www.movie.internal.movie.internal -UseBasicParsing
+
+18. PUSH PROJECT TO GITHUB
+git init
+git add .
+git commit -m "Add AWS online movie application project"
+git remote add origin https://github.com/YOUR-GITHUB-USERNAME/online-movie-application-aws.git
+git branch -M main
+git push -u origin main
