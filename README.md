@@ -1,11 +1,11 @@
 # AWS Online Movie Application
 
-This project deploys the **Binge Watch Online** movie website on Amazon Web Services (AWS).  
+This project deploys the **Movie Watch** movie website on Amazon Web Services (AWS).  
 The website is hosted on an Amazon Linux EC2 instance, the application package is stored in Amazon S3, and an Application Load Balancer distributes traffic to EC2 instances.
 
 ## Project Description
 
-Binge Watch Online is an online entertainment provider. The company website was initially hosted on a single server, which caused slow page loading and limited scalability.
+Movie Watch is an online entertainment provider. The company website was initially hosted on a single server, which caused slow page loading and limited scalability.
 
 This project improves the deployment by using AWS cloud services to host the website, distribute traffic, automatically scale during high CPU usage, send monitoring alerts, and track project costs.
 
@@ -139,7 +139,6 @@ Run the stress test:
 
 ```bash
 sudo yum install -y amazon-efs-utils
-sudo amazon-linux-extras install epel -y
 sudo yum install -y stress
 stress -c 4
 ```
@@ -181,8 +180,8 @@ http://www.movie.internal.movie.internal
 |---|---|
 | Project | OnlineMovieApplication |
 | Environment | Development |
-| Owner | Padma |
-| CostCenter | BingeWatch |
+| Owner | Chandan |
+| CostCenter | MovieWatch |
 
 ## Testing
 
